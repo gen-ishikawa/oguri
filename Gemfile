@@ -46,3 +46,5 @@ group :development do
 end
 
 gem 'carrierwave'
+
+gem 'rails_12factor', group: :production
