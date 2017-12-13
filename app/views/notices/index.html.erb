@@ -1,31 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Notices</h1>
+<div class="wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+<h1>お知らせ</h1>
+<% @notices.each do |notice| %>
+  <h4>
+    <%= link_to notice.title, notice.image.to_s %>
+  </h4>
+  <p>
+    <%= link_to '編集', edit_notice_path(notice), class: 'btn btn-default btn-sm btn-success' %>
+    <%= link_to '削除', notice, method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-default btn-sm btn btn-danger' %>
+  </p>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @notices.each do |notice| %>
-      <tr>
-        <td><%= notice.title %></td>
-        <td><%= notice.body %></td>
-        <td><%= link_to 'File', notice.image.to_s %></td>
-        <td><%= link_to 'Show', notice %></td>
-        <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
-        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Notice', new_notice_path %>
+</div>
