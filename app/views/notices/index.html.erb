@@ -12,8 +12,8 @@
           </strong></h4>
           <p class="right">
             <%= notice.updated_at %>
-            <%= link_to '編集', edit_notice_path(notice), class: 'btn btn-default btn-sm btn-success' %>
-            <%= link_to '削除', notice, method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-default btn-sm btn btn-danger' %>
+            <%= link_to '', edit_notice_path(notice), class: 'fa fa-pencil-square-o fa-lg' %>
+            <%= link_to '', notice, method: :delete, data: { confirm: '本当に削除していいですか？' }, class: "fa fa-trash-o fa-lg" %>
           </p>
        </div>
       <% end %>
