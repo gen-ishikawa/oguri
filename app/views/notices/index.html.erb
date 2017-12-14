@@ -1,17 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<div class="wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-<h1>お知らせ</h1>
-<% @notices.each do |notice| %>
-  <h4>
-    <%= link_to notice.title, notice.image.to_s %>
-  </h4>
-  <p>
-    <%= link_to '編集', edit_notice_path(notice), class: 'btn btn-default btn-sm btn-success' %>
-    <%= link_to '削除', notice, method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-default btn-sm btn btn-danger' %>
-  </p>
-<% end %>
-
-
-<%= link_to 'New Notice', new_notice_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+      <p id="notice"><%= notice %></p>
+      <h1>お知らせ</h1>
+      <% @notices.reverse_each do |notice| %>
+       <div class="wrapper">
+          <h4><strong>
+             <%= link_to notice.title, notice.image.to_s %>
+          </strong></h4>
+          <p class="right">
+            <%= notice.updated_at %>
+            <%= link_to '編集', edit_notice_path(notice), class: 'btn btn-default btn-sm btn-success' %>
+            <%= link_to '削除', notice, method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-default btn-sm btn btn-danger' %>
+          </p>
+       </div>
+      <% end %>
+      <%= link_to 'New Notice', new_notice_path %>
+    </div>
+  </div>
 </div>
