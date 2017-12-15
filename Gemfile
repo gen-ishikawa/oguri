@@ -49,3 +49,5 @@ gem 'carrierwave'
 gem 'twitter-bootstrap-rails'
 
 gem 'rails_12factor', group: :production
+
+gem 'fog'
