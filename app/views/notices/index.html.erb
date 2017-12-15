@@ -7,9 +7,9 @@
       <br>
       <% @notices.reverse_each do |notice| %>
        <div class="wrapper left">
-          <h4><strong>
+          <h2><strong>
              <%= link_to notice.title, notice.image.to_s %>
-          </strong></h4>
+          </strong></h2>
           <p class="right">
             <%= notice.updated_at %>
             <%= link_to '', edit_notice_path(notice), class: 'fa fa-pencil-square-o fa-lg' %>
