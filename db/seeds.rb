@@ -13,3 +13,9 @@
                password_confirmation: "999",
                )
 end
+
+User.create!(email: "admin",
+               password: "178",
+               password_confirmation: "178",
+               admin: true
+               )
