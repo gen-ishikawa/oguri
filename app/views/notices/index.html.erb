@@ -7,12 +7,11 @@
         <br>
       <% end %>
       <% @notices.reverse_each do |notice| %>
-       <div class="wrapper left">
+       <div class="oguri left">
           <h2><strong>
              <%= link_to notice.title, notice.image.to_s %>
           </strong></h2>
           <p class="right">
-            <%= current_user.id %>
             <%= notice.updated_at.strftime("%Y年%m月%d日 %H時%M分") %>
             <% if current_user.admin %>
               <%= link_to '', edit_notice_path(notice), class: 'fa fa-pencil-square-o fa-lg' %>
