@@ -1,17 +1,31 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
-  <header>
-    <ul>
-      <li><%= link_to "トップページ", root_path %></li>
-      <li><%= link_to "お知らせ", notices_path %></li>
-      <% if user_signed_in? %>
-        <% if current_user.admin %>
-          <li><%= link_to '管理画面', rails_admin_path  %></li>
+<section class="main-header">
+  <nav class="navbar navbar-inverse">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+     </div>
+     <div id="gnavi" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to "トップページ", root_path %></li>
+        <li><%= link_to "お知らせ", notices_path %></li>
+        <% if user_signed_in? %>
+          <% if current_user.admin %>
+            <li><%= link_to '管理画面', rails_admin_path  %></li>
+          <% end %>
         <% end %>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path  %></li>
-      <% end %>
-    </ul>
-  </header>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path  %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</section>
 
