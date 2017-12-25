@@ -20,7 +20,10 @@
           </p>
        </div>
       <% end %>
-      
+      <% if user_signed_in? %>
+          <br>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+     <% end %>
     </div>
   </div>
 </div>
